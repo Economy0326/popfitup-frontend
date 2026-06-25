@@ -1,12 +1,20 @@
+import { mockApi } from '../mocks/mockApi'
+
 export const API_BASE =
   import.meta.env.VITE_API_URL ?? 'https://api.popfitup.com'
+
+const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true'
 
 export async function api<T>(
   path: string,
   options: RequestInit = {}
 ): Promise<T> {
+  if (USE_MOCK) {
+    return mockApi<T>(path, options)
+  }
+
   const res = await fetch(`${API_BASE}${path}`, {
-    credentials: 'include', // 세션/쿠키 기반 로그인
+    credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
       ...(options.headers || {}),
@@ -20,6 +28,5 @@ export async function api<T>(
     throw new Error(`API Error ${res.status}: ${text}`)
   }
 
-  // 응답이 비어있을 수도 있기 때문에 체크
   return text ? JSON.parse(text) : (null as T)
 }

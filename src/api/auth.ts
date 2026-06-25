@@ -10,7 +10,7 @@ export type User = {
 export async function fetchMe() {
   try {
     return await api<User | null>('/api/users/me')
-  } catch (err) {
+  } catch {
     // 보통 401(로그인 안 된 상태)일 때 여기로 들어옴 → null 처리
     return null
   }
