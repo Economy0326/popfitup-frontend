@@ -1,7 +1,7 @@
 import { mockApi } from '../mocks/mockApi'
 
 export const API_BASE =
-  import.meta.env.VITE_API_URL ?? 'https://api.popfitup.com'
+  import.meta.env.VITE_API_URL ?? 'http://localhost:3000'
 
 const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true'
 
