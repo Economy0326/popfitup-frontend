@@ -460,26 +460,10 @@ src
 │  └─ reports.ts
 │
 ├─ components
-│  ├─ FavoritesMap.tsx
-│  ├─ GridSection.tsx
-│  ├─ HeroSection.tsx
-│  ├─ LoginRequired.tsx
-│  ├─ MonthSelector.tsx
-│  ├─ NaverMap.tsx
-│  ├─ PopupCard.tsx
-│  └─ PopupCardSkeleton.tsx
-│
 ├─ hooks
 ├─ lib
+├─ mocks
 ├─ routes
-│  ├─ FavoritesPage.tsx
-│  ├─ HomePage.tsx
-│  ├─ MyReportsPage.tsx
-│  ├─ PopupDetailPage.tsx
-│  ├─ RegisterPage.tsx
-│  ├─ ReportsAdminPage.tsx
-│  └─ RootLayout.tsx
-│
 ├─ shared
 ├─ types
 ├─ index.css
